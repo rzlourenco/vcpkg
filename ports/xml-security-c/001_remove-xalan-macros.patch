@@ -1,0 +1,362 @@
+diff --git a/xsec/canon/XSECC14n20010315.cpp b/xsec/canon/XSECC14n20010315.cpp
+index 53913f96..4a265a8d 100644
+--- a/xsec/canon/XSECC14n20010315.cpp
++++ b/xsec/canon/XSECC14n20010315.cpp
+@@ -56,18 +56,18 @@ XERCES_CPP_NAMESPACE_USE
+ #include <xalanc/XPath/NodeRefList.hpp>
+ 
+ // Namespace definitions
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XercesDOMSupport)
+-XALAN_USING_XALAN(XercesParserLiaison)
+-XALAN_USING_XALAN(XalanDocument)
+-XALAN_USING_XALAN(XalanNode)
+-XALAN_USING_XALAN(XalanElement)
+-XALAN_USING_XALAN(XalanDOMString)
+-XALAN_USING_XALAN(XalanDOMChar)
+-XALAN_USING_XALAN(NodeRefList)
+-XALAN_USING_XALAN(XercesDocumentWrapper)
+-XALAN_USING_XALAN(XercesWrapperNavigator)
+-XALAN_USING_XALAN(c_wstr)
++using xalanc::XPathEvaluator;
++using xalanc::XercesDOMSupport;
++using xalanc::XercesParserLiaison;
++using xalanc::XalanDocument;
++using xalanc::XalanNode;
++using xalanc::XalanElement;
++using xalanc::XalanDOMString;
++using xalanc::XalanDOMChar;
++using xalanc::NodeRefList;
++using xalanc::XercesDocumentWrapper;
++using xalanc::XercesWrapperNavigator;
++using xalanc::c_wstr;
+ 
+ #endif
+ 
+diff --git a/xsec/dsig/DSIGXPathHere.cpp b/xsec/dsig/DSIGXPathHere.cpp
+index 2c6a415f..9eff842e 100644
+--- a/xsec/dsig/DSIGXPathHere.cpp
++++ b/xsec/dsig/DSIGXPathHere.cpp
+@@ -30,7 +30,7 @@
+ 
+ #ifdef XSEC_HAVE_XPATH
+ 
+-XALAN_USING_XALAN(XalanCopyConstruct);
++using xalanc::XalanCopyConstruct;;
+ 
+ DSIGXPathHere::DSIGXPathHere() {
+ 
+diff --git a/xsec/dsig/DSIGXPathHere.hpp b/xsec/dsig/DSIGXPathHere.hpp
+index 64d15b56..0e36cd72 100644
+--- a/xsec/dsig/DSIGXPathHere.hpp
++++ b/xsec/dsig/DSIGXPathHere.hpp
+@@ -56,12 +56,12 @@
+ 
+ // Namespace usage
+ 
+-XALAN_USING_XALAN(Function);
+-XALAN_USING_XALAN(XalanNode);
+-XALAN_USING_XALAN(XPathExecutionContext);
+-XALAN_USING_XALAN(XalanDOMString);
+-XALAN_USING_XALAN(XObjectPtr);
+-XALAN_USING_XALAN(MemoryManagerType);
++using xalanc::Function;;
++using xalanc::XalanNode;;
++using xalanc::XPathExecutionContext;;
++using xalanc::XalanDOMString;;
++using xalanc::XObjectPtr;;
++using xalanc::MemoryManagerType;;
+ 
+ XSEC_USING_XERCES(Locator);
+ 
+diff --git a/xsec/samples/simpleDecrypt.cpp b/xsec/samples/simpleDecrypt.cpp
+index 9b8f085b..0f7af371 100644
+--- a/xsec/samples/simpleDecrypt.cpp
++++ b/xsec/samples/simpleDecrypt.cpp
+@@ -54,7 +54,7 @@
+ 
+ #ifdef XSEC_HAVE_XALAN
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XalanTransformer;
+ #endif
+ 
+ // OpenSSL
+diff --git a/xsec/samples/simpleEncrypt.cpp b/xsec/samples/simpleEncrypt.cpp
+index a94112f3..e7a129e5 100644
+--- a/xsec/samples/simpleEncrypt.cpp
++++ b/xsec/samples/simpleEncrypt.cpp
+@@ -48,7 +48,7 @@
+ 
+ #ifdef XSEC_HAVE_XALAN
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XalanTransformer;
+ #endif
+ 
+ XERCES_CPP_NAMESPACE_USE
+diff --git a/xsec/samples/simpleHMAC.cpp b/xsec/samples/simpleHMAC.cpp
+index 7a551fdf..354b0f24 100644
+--- a/xsec/samples/simpleHMAC.cpp
++++ b/xsec/samples/simpleHMAC.cpp
+@@ -49,7 +49,7 @@
+ 
+ #ifdef XSEC_HAVE_XALAN
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XalanTransformer;
+ #endif
+ 
+ XERCES_CPP_NAMESPACE_USE
+diff --git a/xsec/samples/simpleValidate.cpp b/xsec/samples/simpleValidate.cpp
+index c5a002db..336c0ab9 100644
+--- a/xsec/samples/simpleValidate.cpp
++++ b/xsec/samples/simpleValidate.cpp
+@@ -52,7 +52,7 @@ XERCES_CPP_NAMESPACE_USE
+ 
+ #ifdef XSEC_HAVE_XALAN
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XalanTransformer;
+ #endif
+ 
+ char docToValidate [4096] = "\
+diff --git a/xsec/tools/checksig/checksig.cpp b/xsec/tools/checksig/checksig.cpp
+index f62ed389..4e015f21 100644
+--- a/xsec/tools/checksig/checksig.cpp
++++ b/xsec/tools/checksig/checksig.cpp
+@@ -83,8 +83,8 @@ using std::endl;
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 
+diff --git a/xsec/tools/cipher/cipher.cpp b/xsec/tools/cipher/cipher.cpp
+index ba2e2a9f..8d3c91f4 100644
+--- a/xsec/tools/cipher/cipher.cpp
++++ b/xsec/tools/cipher/cipher.cpp
+@@ -93,8 +93,8 @@ using std::ostream;
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 
+diff --git a/xsec/tools/siginf/siginf.cpp b/xsec/tools/siginf/siginf.cpp
+index 19f890e3..f48f43bb 100644
+--- a/xsec/tools/siginf/siginf.cpp
++++ b/xsec/tools/siginf/siginf.cpp
+@@ -86,8 +86,8 @@ using std::ostream;
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #else
+ 
+diff --git a/xsec/tools/templatesign/templatesign.cpp b/xsec/tools/templatesign/templatesign.cpp
+index 74b9b7f3..f8bc43d1 100644
+--- a/xsec/tools/templatesign/templatesign.cpp
++++ b/xsec/tools/templatesign/templatesign.cpp
+@@ -95,8 +95,8 @@
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 
+diff --git a/xsec/tools/txfmout/txfmout.cpp b/xsec/tools/txfmout/txfmout.cpp
+index 453a6714..7163d01f 100644
+--- a/xsec/tools/txfmout/txfmout.cpp
++++ b/xsec/tools/txfmout/txfmout.cpp
+@@ -84,8 +84,8 @@ using std::ofstream;
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #else
+ 
+diff --git a/xsec/tools/xklient/xklient.cpp b/xsec/tools/xklient/xklient.cpp
+index fbc7a1d3..8d0d8df0 100644
+--- a/xsec/tools/xklient/xklient.cpp
++++ b/xsec/tools/xklient/xklient.cpp
+@@ -122,8 +122,8 @@ using std::ostream;
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 
+diff --git a/xsec/tools/xtest/xtest.cpp b/xsec/tools/xtest/xtest.cpp
+index 0508cf82..90f8bc1d 100644
+--- a/xsec/tools/xtest/xtest.cpp
++++ b/xsec/tools/xtest/xtest.cpp
+@@ -63,8 +63,8 @@
+ #include <xalanc/XPath/XPathEvaluator.hpp>
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XPathEvaluator;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 
+diff --git a/xsec/transformers/TXFMXPath.cpp b/xsec/transformers/TXFMXPath.cpp
+index 9df19af9..1b92114e 100644
+--- a/xsec/transformers/TXFMXPath.cpp
++++ b/xsec/transformers/TXFMXPath.cpp
+@@ -48,25 +48,25 @@
+ #endif
+ 
+ // Xalan namespace usage
+-XALAN_USING_XALAN(XPathProcessorImpl)
+-XALAN_USING_XALAN(XercesDOMSupport)
+-XALAN_USING_XALAN(XercesParserLiaison)
+-XALAN_USING_XALAN(XercesDocumentWrapper)
+-XALAN_USING_XALAN(XercesWrapperNavigator)
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XPathFactoryDefault)
+-XALAN_USING_XALAN(XPathConstructionContextDefault)
+-XALAN_USING_XALAN(XalanDocument)
+-XALAN_USING_XALAN(XalanNode)
+-XALAN_USING_XALAN(XalanDOMChar)
+-XALAN_USING_XALAN(XPathEnvSupportDefault)
+-XALAN_USING_XALAN(XObjectFactoryDefault)
+-XALAN_USING_XALAN(XPathExecutionContextDefault)
+-XALAN_USING_XALAN(ElementPrefixResolverProxy)
+-XALAN_USING_XALAN(XPath)
+-XALAN_USING_XALAN(NodeRefListBase)
+-XALAN_USING_XALAN(XSLTResultTarget)
+-XALAN_USING_XALAN(XSLException)
++using xalanc::XPathProcessorImpl;
++using xalanc::XercesDOMSupport;
++using xalanc::XercesParserLiaison;
++using xalanc::XercesDocumentWrapper;
++using xalanc::XercesWrapperNavigator;
++using xalanc::XPathEvaluator;
++using xalanc::XPathFactoryDefault;
++using xalanc::XPathConstructionContextDefault;
++using xalanc::XalanDocument;
++using xalanc::XalanNode;
++using xalanc::XalanDOMChar;
++using xalanc::XPathEnvSupportDefault;
++using xalanc::XObjectFactoryDefault;
++using xalanc::XPathExecutionContextDefault;
++using xalanc::ElementPrefixResolverProxy;
++using xalanc::XPath;
++using xalanc::NodeRefListBase;
++using xalanc::XSLTResultTarget;
++using xalanc::XSLException;
+ 
+ #endif
+ 
+diff --git a/xsec/transformers/TXFMXPathFilter.cpp b/xsec/transformers/TXFMXPathFilter.cpp
+index 49111d3b..92e680cc 100644
+--- a/xsec/transformers/TXFMXPathFilter.cpp
++++ b/xsec/transformers/TXFMXPathFilter.cpp
+@@ -67,27 +67,27 @@ XERCES_CPP_NAMESPACE_USE
+ #endif
+ 
+ // Xalan namespace usage
+-XALAN_USING_XALAN(XPathProcessorImpl)
+-XALAN_USING_XALAN(XalanDOMString)
+-XALAN_USING_XALAN(XercesDOMSupport)
+-XALAN_USING_XALAN(XercesParserLiaison)
+-XALAN_USING_XALAN(XercesDocumentWrapper)
+-XALAN_USING_XALAN(XercesWrapperNavigator)
+-XALAN_USING_XALAN(XPathEvaluator)
+-XALAN_USING_XALAN(XPathFactoryDefault)
+-XALAN_USING_XALAN(XPathConstructionContextDefault)
+-XALAN_USING_XALAN(XalanDocument)
+-XALAN_USING_XALAN(XalanNode)
+-XALAN_USING_XALAN(XalanDOMChar)
+-XALAN_USING_XALAN(XPathEnvSupportDefault)
+-XALAN_USING_XALAN(XObjectFactoryDefault)
+-XALAN_USING_XALAN(XObjectPtr)
+-XALAN_USING_XALAN(XPathExecutionContextDefault)
+-XALAN_USING_XALAN(ElementPrefixResolverProxy)
+-XALAN_USING_XALAN(XPath)
+-XALAN_USING_XALAN(NodeRefListBase)
+-XALAN_USING_XALAN(XSLTResultTarget)
+-XALAN_USING_XALAN(XSLException)
++using xalanc::XPathProcessorImpl;
++using xalanc::XalanDOMString;
++using xalanc::XercesDOMSupport;
++using xalanc::XercesParserLiaison;
++using xalanc::XercesDocumentWrapper;
++using xalanc::XercesWrapperNavigator;
++using xalanc::XPathEvaluator;
++using xalanc::XPathFactoryDefault;
++using xalanc::XPathConstructionContextDefault;
++using xalanc::XalanDocument;
++using xalanc::XalanNode;
++using xalanc::XalanDOMChar;
++using xalanc::XPathEnvSupportDefault;
++using xalanc::XObjectFactoryDefault;
++using xalanc::XObjectPtr;
++using xalanc::XPathExecutionContextDefault;
++using xalanc::ElementPrefixResolverProxy;
++using xalanc::XPath;
++using xalanc::NodeRefListBase;
++using xalanc::XSLTResultTarget;
++using xalanc::XSLException;
+ 
+ #endif
+ 
+diff --git a/xsec/transformers/TXFMXSL.cpp b/xsec/transformers/TXFMXSL.cpp
+index f1b6f778..44620c9d 100644
+--- a/xsec/transformers/TXFMXSL.cpp
++++ b/xsec/transformers/TXFMXSL.cpp
+@@ -46,7 +46,7 @@ XERCES_CPP_NAMESPACE_USE
+ #include <strstream>
+ #include <fstream>
+ 
+-XALAN_USING_XALAN(XSLTResultTarget)
++using xalanc::XSLTResultTarget;
+ 
+ // Function used to output data to a safeBuffer
+ extern "C" {
+diff --git a/xsec/transformers/TXFMXSL.hpp b/xsec/transformers/TXFMXSL.hpp
+index bbb9d207..3818f6b4 100644
+--- a/xsec/transformers/TXFMXSL.hpp
++++ b/xsec/transformers/TXFMXSL.hpp
+@@ -44,10 +44,10 @@
+ #include <xalanc/XalanTransformer/XalanTransformer.hpp>
+ 
+ // Xalan Namespace usage
+-XALAN_USING_XALAN(XercesDOMSupport)
+-XALAN_USING_XALAN(XercesParserLiaison)
+-XALAN_USING_XALAN(XalanDocument)
+-XALAN_USING_XALAN(XalanTransformer)
++using xalanc::XercesDOMSupport;
++using xalanc::XercesParserLiaison;
++using xalanc::XalanDocument;
++using xalanc::XalanTransformer;
+ 
+ #endif
+ 

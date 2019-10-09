@@ -1,0 +1,13 @@
+Source: xml-security-c
+Version: 2.0.2
+Description: An implementation of the XML Digital Signature and Encryption specifications
+Build-Depends: xerces-c
+Default-Features: openssl, xalan
+
+Feature: xalan
+Build-Depends: xalan-c, icu (linux)
+Description: Enable Xalan integration
+
+Feature: openssl
+Build-Depends: openssl
+Description: Use the OpenSSL crypto provider

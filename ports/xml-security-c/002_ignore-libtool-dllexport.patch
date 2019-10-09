@@ -1,0 +1,24 @@
+diff --git a/xsec/framework/XSECDefs.hpp b/xsec/framework/XSECDefs.hpp
+index bfa0d69c..baf4155c 100644
+--- a/xsec/framework/XSECDefs.hpp
++++ b/xsec/framework/XSECDefs.hpp
+@@ -92,15 +92,15 @@
+ //           Project Library Handling
+ // --------------------------------------------------------------------------------
+ 
+-#if defined(DLL_EXPORT)
++//#if defined(DLL_EXPORT)
+   #if defined(XSEC_BUILDING_LIBRARY)
+     #define XSEC_EXPORT XERCES_PLATFORM_EXPORT
+   #else
+     #define XSEC_EXPORT XERCES_PLATFORM_IMPORT
+   #endif
+-#else
+-  #define XSEC_EXPORT
+-#endif
++//#else
++//  #define XSEC_EXPORT
++//#endif
+ 
+ 
+ // Platform includes.  Much of this is taken from Xalan
